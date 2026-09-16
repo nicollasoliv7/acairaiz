@@ -104,13 +104,7 @@ export default defineConfig([
       "max-nested-callbacks": ["warn", 3],
       "quality/max-lines": [
         "error",
-        {
-          max: 350,
-          ignore: [
-            "components/ui/sidebar.tsx",
-            "components/ui/chart.tsx",
-          ],
-        },
+        { max: 350 },
       ],
       "quality/no-direct-console": [
         // Baseline: 1 existing violation. Promote to error when it reaches 0.
