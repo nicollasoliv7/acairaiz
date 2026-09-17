@@ -4,10 +4,12 @@ import { ProgressiveBlur } from "@/components/ProgressiveBlur";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const heroImage = "/images/acai-raiz-hero.webp";
+const premiumImage = "/images/acai-raiz-premium.webp";
+const cupImage = "/images/acai-raiz-copo.webp";
 const products = [
-  { name: "Açaí clássico", detail: "Textura intensa · receita da casa", size: "large", position: "center" },
-  { name: "Do seu jeito", detail: "Frutas, cremes e crocantes", size: "tall", position: "70% center" },
-  { name: "Gelado de verdade", detail: "Cremosidade em cada colherada", size: "wide", position: "80% center" },
+  { name: "Açaí premium", detail: "Textura intensa · receita artesanal", size: "large", position: "center", image: premiumImage },
+  { name: "Pronto para saborear", detail: "Cremoso, gelado e irresistível", size: "tall", position: "center", image: cupImage },
+  { name: "Do seu jeito", detail: "Frutas, cremes e crocantes", size: "wide", position: "80% center", image: heroImage },
 ];
 const testimonials = [
   { quote: "A textura é fora do normal. Cremoso, intenso e sem aquele gosto artificial.", name: "Marina A.", context: "Cliente Açaí Raiz" },
@@ -46,7 +48,7 @@ export default function Home() {
       <section id="acai" className="products section-pad">
         <ScrollReveal><p className="eyebrow"><span /> ESCOLHA SEU MOMENTO</p></ScrollReveal>
         <ScrollReveal delay={120}><div className="section-heading"><h2>Feito para ser<br /><em>inesquecível.</em></h2><p>Do clássico bem cremoso às combinações mais completas, cada escolha entrega textura, frescor e personalidade.</p></div></ScrollReveal>
-        <div className="bento-grid">{products.map((product, index) => <ScrollReveal key={product.name} delay={index * 150} className={`product-wrap ${product.size}`}><article className="product-card"><Image src={heroImage} alt={product.name} fill sizes="(max-width: 700px) 100vw, 50vw" style={{ objectPosition: product.position }} /><div className="product-shade" /><div className="product-copy"><span>0{index + 1}</span><h3>{product.name}</h3><p>{product.detail}</p></div></article></ScrollReveal>)}
+        <div className="bento-grid">{products.map((product, index) => <ScrollReveal key={product.name} delay={index * 150} className={`product-wrap ${product.size}`}><article className="product-card"><Image src={product.image} alt={product.name} fill sizes="(max-width: 700px) 100vw, 50vw" style={{ objectPosition: product.position }} /><div className="product-shade" /><div className="product-copy"><span>0{index + 1}</span><h3>{product.name}</h3><p>{product.detail}</p></div></article></ScrollReveal>)}
           <ScrollReveal delay={450} className="accent-wrap"><article className="accent-card"><span className="mono">MONTE O SEU</span><h3>Uma combinação com a sua cara.</h3><a href="#onde">Começar pedido <ArrowUpRight size={20} /></a></article></ScrollReveal>
         </div>
       </section>
@@ -55,7 +57,7 @@ export default function Home() {
         <ScrollReveal direction="left"><p className="eyebrow"><span /> 01 / NOSSA RAIZ</p></ScrollReveal>
         <ScrollReveal direction="left" delay={120}><h2>Simples na essência.<br /><em>Marcante no sabor.</em></h2></ScrollReveal>
         <div className="steps">{["Sabor que chega primeiro", "Cremosidade que fica", "Combinações sem limite", "Experiência para repetir"].map((step, index) => <ScrollReveal key={step} direction="left" delay={index * 150} className="step"><span>0{index + 1}</span><p>{step}</p><ArrowUpRight size={18} /></ScrollReveal>)}</div>
-      </div><ScrollReveal direction="right" delay={200} duration={800} className="method-image"><Image src={heroImage} alt="Textura cremosa do açaí sendo servida" fill sizes="(max-width: 900px) 100vw, 45vw" /><div className="stamp"><span>DESDE</span><b>A RAIZ</b><span>ATÉ VOCÊ</span></div></ScrollReveal></section>
+      </div><ScrollReveal direction="right" delay={200} duration={800} className="method-image"><Image src={cupImage} alt="Copo de Açaí Raiz artesanal pronto para consumo" fill sizes="(max-width: 900px) 100vw, 45vw" /><div className="stamp"><span>DESDE</span><b>A RAIZ</b><span>ATÉ VOCÊ</span></div></ScrollReveal></section>
 
       <section className="proof section-pad"><ScrollReveal><p className="eyebrow dark"><span /> QUEM PROVA, ENTENDE</p></ScrollReveal><ScrollReveal delay={100}><h2>Tem sabor que a gente<br /><em>não esquece.</em></h2></ScrollReveal>
         <div className="testimonial-grid">{testimonials.map((item, index) => <ScrollReveal key={item.name} delay={index * 120}><article className="testimonial"><div className="stars">★★★★★</div><blockquote>“{item.quote}”</blockquote><footer><b>{item.name}</b><span>{item.context}</span></footer></article></ScrollReveal>)}</div>
