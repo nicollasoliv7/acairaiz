@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDownRight, ArrowUpRight, Check, MapPin, Sparkles, Star } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Building2, Check, Factory, MapPin, PackageCheck, Snowflake, Sparkles, Star, Truck, UserRound } from "lucide-react";
 import { ProgressiveBlur } from "@/components/ProgressiveBlur";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -56,6 +56,17 @@ export default function Home() {
         <div className="bento-grid">{products.map((product, index) => <ScrollReveal key={product.name} delay={index * 150} className={`product-wrap ${product.size}`}><article className="product-card"><Image src={product.image} alt={product.name} fill sizes="(max-width: 700px) 100vw, 50vw" style={{ objectPosition: product.position }} /><div className="product-shade" /><div className="product-copy"><span>0{index + 1}</span><h3>{product.name}</h3><p>{product.detail}</p></div></article></ScrollReveal>)}
           <ScrollReveal delay={450} className="accent-wrap"><article className="accent-card"><span className="mono">MONTE O SEU</span><h3>Uma combinação com a sua cara.</h3><a href="#onde">Começar pedido <ArrowUpRight size={20} /></a></article></ScrollReveal>
         </div>
+      </section>
+
+      <section id="atendimento" className="audience section-pad">
+        <ScrollReveal><p className="eyebrow"><span /> FÁBRICA PRÓPRIA · ITABIRITO/MG</p></ScrollReveal>
+        <ScrollReveal delay={120}><div className="section-heading"><h2>Da nossa fábrica.<br /><em>Para você e seu negócio.</em></h2><p>Produzimos conforme a demanda para atender do pedido do dia a dia ao abastecimento de estabelecimentos.</p></div></ScrollReveal>
+        <div className="audience-grid">
+          <ScrollReveal direction="left" className="audience-wrap"><article className="audience-card individual"><div className="audience-icon"><UserRound size={25} /></div><span className="audience-kicker">PESSOA FÍSICA</span><h3>Para você</h3><p>O sabor da fábrica direto para a sua casa, com praticidade para escolher como receber.</p><ul><li><Truck size={18} /> Delivery em Itabirito</li><li><Factory size={18} /> Retirada direto na fábrica</li></ul></article></ScrollReveal>
+          <ScrollReveal direction="right" delay={120} className="audience-wrap"><article className="audience-card business"><div className="audience-icon"><Building2 size={25} /></div><span className="audience-kicker">EMPRESAS · CNPJ</span><h3>Para o seu negócio</h3><p>Produção conforme a demanda para quem precisa de qualidade, constância e produto para revenda ou consumo.</p><div className="market-tags"><span>Supermercados</span><span>Mercearias</span><span>Restaurantes</span><span>Clubes</span><span>Outros negócios</span></div></article></ScrollReveal>
+        </div>
+        <ScrollReveal delay={180} duration={850} className="texture-wrap"><article className="texture-feature"><div className="texture-copy"><span className="texture-label"><Snowflake size={16} /> FORMULAÇÃO CONCENTRADA</span><h3>Do freezer à cremosidade em poucos minutos.</h3><p>Após cerca de 5 minutos fora do congelador, o Açaí Raiz começa a recuperar sua textura encorpada e cremosa — sem aquela sensação de produto excessivamente diluído.</p><div className="clean-recipe"><PackageCheck size={19} /><span><b>Receita mais natural</b>Sem adição de corantes e conservantes</span></div></div><div className="texture-visual"><Image src={premiumImage} alt="Açaí Raiz concentrado com textura cremosa" fill sizes="(max-width: 700px) 100vw, 48vw" /><div className="minute-badge"><strong>≈5</strong><span>minutos</span></div></div></article></ScrollReveal>
+        <ScrollReveal delay={260}><div className="audience-cta"><div><Factory size={23} /><span><b>Produção própria em Itabirito</b><small>Para sua casa ou para abastecer o seu negócio.</small></span></div><GoldButton>Fazer pedido ou orçamento</GoldButton></div></ScrollReveal>
       </section>
 
       <section id="experiencia" className="method section-pad section-grid"><div>
