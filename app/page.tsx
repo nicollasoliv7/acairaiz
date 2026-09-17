@@ -13,9 +13,12 @@ const products = [
   { name: "Do seu jeito", detail: "Frutas, cremes e crocantes", size: "wide", position: "80% center", image: heroImage },
 ];
 const testimonials = [
-  { quote: "A textura é fora do normal. Cremoso, intenso e sem aquele gosto artificial.", name: "Marina A.", context: "Cliente Açaí Raiz" },
-  { quote: "Virou nosso ritual depois do treino. Sempre chega gelado e muito bem montado.", name: "Rafael M.", context: "Cliente recorrente" },
-  { quote: "Dá para sentir o cuidado em tudo — do sabor à apresentação.", name: "Beatriz C.", context: "Apaixonada por açaí" },
+  { quote: "Textura perfeita, o sabor da fruta é apuradíssimo. Corante zero. Não é doce, é no ponto.", context: "Feedback real · WhatsApp" },
+  { quote: "É cremoso mesmo, não tem nem pedacinho de gelo e não tem aquele gosto de xarope. Bom demais!", context: "Feedback real · WhatsApp" },
+  { quote: "Amamos. Um creme leve, suave e muito cremoso. Nada de gelo cristalizado. Muito gostoso mesmo.", context: "Feedback real · WhatsApp" },
+  { quote: "Perfeito! Muito saboroso, textura leve e adocicado no ponto. Já virei fã e vou comprar mais vezes.", context: "Feedback real · WhatsApp" },
+  { quote: "Uma delícia. Vou indicar para o pessoal da minha família e amigos.", context: "Feedback real · WhatsApp" },
+  { quote: "O açaí é muito gostoso, nós adoramos!", context: "Feedback real · WhatsApp" },
 ];
 
 function GoldButton({ children, href = "#onde" }: { children: React.ReactNode; href?: string }) {
@@ -60,8 +63,8 @@ export default function Home() {
         <div className="steps">{["Sabor que chega primeiro", "Cremosidade que fica", "Combinações sem limite", "Experiência para repetir"].map((step, index) => <ScrollReveal key={step} direction="left" delay={index * 150} className="step"><span>0{index + 1}</span><p>{step}</p><ArrowUpRight size={18} /></ScrollReveal>)}</div>
       </div><ScrollReveal direction="right" delay={200} duration={800} className="method-image"><Image src={cupImage} alt="Copo de Açaí Raiz artesanal pronto para consumo" fill sizes="(max-width: 900px) 100vw, 45vw" /><div className="stamp"><span>DESDE</span><b>A RAIZ</b><span>ATÉ VOCÊ</span></div></ScrollReveal></section>
 
-      <section className="proof section-pad"><ScrollReveal><p className="eyebrow dark"><span /> QUEM PROVA, ENTENDE</p></ScrollReveal><ScrollReveal delay={100}><h2>Tem sabor que a gente<br /><em>não esquece.</em></h2></ScrollReveal>
-        <div className="testimonial-grid">{testimonials.map((item, index) => <ScrollReveal key={item.name} delay={index * 120}><article className="testimonial"><div className="stars">★★★★★</div><blockquote>“{item.quote}”</blockquote><footer><b>{item.name}</b><span>{item.context}</span></footer></article></ScrollReveal>)}</div>
+      <section className="proof section-pad"><ScrollReveal><p className="eyebrow dark"><span /> AVALIAÇÕES REAIS</p></ScrollReveal><ScrollReveal delay={100}><h2>Quem prova,<br /><em>recomenda.</em></h2></ScrollReveal>
+        <div className="testimonial-grid">{testimonials.map((item, index) => <ScrollReveal key={item.quote} delay={(index % 3) * 120}><article className="testimonial"><div className="stars" aria-hidden="true">★★★★★</div><blockquote>“{item.quote}”</blockquote><footer><b>Cliente verificado</b><span>{item.context}</span></footer></article></ScrollReveal>)}</div>
       </section>
 
       <section id="onde" className="final-cta section-pad"><ScrollReveal><p className="eyebrow"><span /> SUA PAUSA MERECE MAIS</p></ScrollReveal><ScrollReveal delay={120}><h2>Deu <em>vontade?</em></h2></ScrollReveal><ScrollReveal delay={240}><p>Seu Açaí Raiz está te esperando.</p></ScrollReveal><ScrollReveal delay={350} duration={800}><div className="cta-card"><MapPin size={22} /><div><span>PEÇA AGORA</span><b>Encontre a unidade mais próxima</b></div><GoldButton>Ver onde estamos</GoldButton></div></ScrollReveal></section>
