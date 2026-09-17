@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const heroImage = "/images/acai-raiz-hero.webp";
 const premiumImage = "/images/acai-raiz-premium.webp";
 const cupImage = "/images/acai-raiz-copo.webp";
+const brandLogo = "/images/acai-raiz-logo.png";
 const products = [
   { name: "Açaí premium", detail: "Textura intensa · receita artesanal", size: "large", position: "center", image: premiumImage },
   { name: "Pronto para saborear", detail: "Cremoso, gelado e irresistível", size: "tall", position: "center", image: cupImage },
@@ -24,7 +25,7 @@ function GoldButton({ children, href = "#onde" }: { children: React.ReactNode; h
 export default function Home() {
   return <>
     <header className="site-header"><nav className="nav-shell" aria-label="Navegação principal">
-      <a className="brand" href="#inicio" aria-label="Açaí Raiz — início"><span className="brand-mark">R</span><span>AÇAÍ <b>RAIZ</b></span></a>
+      <a className="brand" href="#inicio" aria-label="Açaí Raiz — início"><Image className="brand-mark" src={brandLogo} alt="" width={44} height={44} priority /><span>AÇAÍ <b>RAIZ</b></span></a>
       <div className="nav-pill"><a href="#inicio">Início</a><a href="#acai">Nosso Açaí</a><a href="#experiencia">Experiência</a><a href="#onde">Onde estamos</a></div>
       <GoldButton>Pedir agora</GoldButton>
     </nav></header>
@@ -66,7 +67,7 @@ export default function Home() {
       <section id="onde" className="final-cta section-pad"><ScrollReveal><p className="eyebrow"><span /> SUA PAUSA MERECE MAIS</p></ScrollReveal><ScrollReveal delay={120}><h2>Deu <em>vontade?</em></h2></ScrollReveal><ScrollReveal delay={240}><p>Seu Açaí Raiz está te esperando.</p></ScrollReveal><ScrollReveal delay={350} duration={800}><div className="cta-card"><MapPin size={22} /><div><span>PEÇA AGORA</span><b>Encontre a unidade mais próxima</b></div><GoldButton>Ver onde estamos</GoldButton></div></ScrollReveal></section>
     </main>
 
-    <footer className="footer"><div className="footer-watermark">AÇAÍ RAIZ</div><div className="footer-content"><a className="brand" href="#inicio"><span className="brand-mark">R</span><span>AÇAÍ <b>RAIZ</b></span></a><p>Sabor de verdade, do nosso jeito.</p><div><a href="#acai">Nosso Açaí</a><a href="#experiencia">Experiência</a><a href="#onde">Contato</a></div><span className="copyright">© 2026 AÇAÍ RAIZ</span></div></footer>
+    <footer className="footer"><div className="footer-watermark">AÇAÍ RAIZ</div><div className="footer-content"><a className="brand" href="#inicio" aria-label="Açaí Raiz — início"><Image className="brand-mark" src={brandLogo} alt="" width={44} height={44} /><span>AÇAÍ <b>RAIZ</b></span></a><p>Sabor de verdade, do nosso jeito.</p><div><a href="#acai">Nosso Açaí</a><a href="#experiencia">Experiência</a><a href="#onde">Contato</a></div><span className="copyright">© 2026 AÇAÍ RAIZ</span></div></footer>
     <ProgressiveBlur />
   </>;
 }
