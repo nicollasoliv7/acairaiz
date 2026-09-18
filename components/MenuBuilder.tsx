@@ -1,7 +1,6 @@
 "use client";
 
 import { Check, Minus, Plus, Share2, ShoppingBag, Sparkles } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
 
 const sizes = [
@@ -10,25 +9,18 @@ const sizes = [
   { id: "1l", label: "1 litro", price: 34.9 },
 ];
 
-type Extra = {
-  id: string;
-  label: string;
-  price: number;
-  image?: string;
-};
-
-const extras: Extra[] = [
+const extras = [
   { id: "nutella", label: "Nutella", price: 7 },
-  { id: "mousse-morango", label: "Mousse de morango", price: 4, image: "/images/menu/morango.png" },
-  { id: "mousse-maracuja", label: "Mousse de maracujá", price: 4, image: "/images/menu/maracuja.png" },
+  { id: "mousse-morango", label: "Mousse de morango", price: 4 },
+  { id: "mousse-maracuja", label: "Mousse de maracujá", price: 4 },
   { id: "ovomaltine", label: "Ovomaltine", price: 4 },
   { id: "ouro-branco", label: "Ouro Branco", price: 3.5 },
-  { id: "morango", label: "Morango", price: 3.5, image: "/images/menu/morango.png" },
+  { id: "morango", label: "Morango", price: 3.5 },
   { id: "granola", label: "Granola", price: 3.5 },
   { id: "leite-po", label: "Leite em pó", price: 3 },
   { id: "leite-condensado", label: "Leite condensado", price: 3 },
   { id: "bis", label: "Bis", price: 3 },
-  { id: "banana", label: "Banana", price: 3, image: "/images/menu/banana.png" },
+  { id: "banana", label: "Banana", price: 3 },
 ];
 
 const money = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
@@ -78,14 +70,7 @@ export function MenuBuilder() {
       <div className="extra-options">
         {extras.map((item) => {
           const selected = selectedExtras.includes(item.id);
-          return <button key={item.id} type="button" aria-pressed={selected} className={selected ? "selected" : ""} onClick={() => toggleExtra(item.id)}>
-            <span className={`extra-thumb${item.image ? " has-image" : ""}`} aria-hidden="true">
-              {item.image ? <Image src={item.image} alt="" width={46} height={46} /> : <Sparkles size={15} />}
-            </span>
-            <span className="extra-name">{item.label}</span>
-            <b>+ {money.format(item.price)}</b>
-            <span className="extra-check"><Check size={14} /></span>
-          </button>;
+          return <button key={item.id} type="button" aria-pressed={selected} className={selected ? "selected" : ""} onClick={() => toggleExtra(item.id)}><span>{item.label}</span><b>+ {money.format(item.price)}</b><span className="extra-check"><Check size={14} /></span></button>;
         })}
       </div>
     </div>
