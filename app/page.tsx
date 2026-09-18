@@ -9,6 +9,8 @@ const premiumImage = "/images/acai-raiz-premium.webp";
 const cupImage = "/images/acai-raiz-copo.webp";
 const brandLogo = "/images/acai-raiz-logo.png";
 const locationUrl = "https://www.google.com/maps/search/?api=1&query=Rua+Sete+Lagoas%2C+283A%2C+Monte+Sinai%2C+Itabirito%2C+MG%2C+Brasil";
+const whatsappUrl = "https://api.whatsapp.com/send/?phone=5531986534493&text=Ol%C3%A1!%20%F0%9F%91%8B%20Vim%20pelo%20site%20do%20A%C3%A7a%C3%AD%20Raiz%20e%20gostaria%20de%20fazer%20um%20pedido.%20Poderia%20me%20ajudar%3F&type=phone_number&app_absent=0";
+const aiqfomeUrl = "https://aiqfome.com/MG/itabirito/acai-raiz-brasil-ec0ab";
 const products = [
   { name: "Açaí premium", detail: "Textura intensa · receita artesanal", size: "large", position: "center", image: premiumImage },
   { name: "Pronto para saborear", detail: "Cremoso, gelado e irresistível", size: "tall", position: "center", image: cupImage },
@@ -23,8 +25,17 @@ const testimonials = [
   { quote: "O açaí é muito gostoso, nós adoramos!", context: "Feedback real · WhatsApp" },
 ];
 
-function GoldButton({ children, href = "#onde" }: { children: React.ReactNode; href?: string }) {
-  return <a className="gold-button" href={href}>{children}<ArrowUpRight size={18} /></a>;
+function GoldButton({ children, href = "#onde", className = "" }: { children: React.ReactNode; href?: string; className?: string }) {
+  return <a className={`gold-button ${className}`} href={href} target="_blank" rel="noopener noreferrer">{children}<ArrowUpRight size={18} /></a>;
+}
+
+function OrderActions({ labelWhatsApp = "Pedir via WhatsApp", labelAiqfome = "Pedir via aiqfome", className = "" }: { labelWhatsApp?: string; labelAiqfome?: string; className?: string }) {
+  return (
+    <div className={`flex flex-wrap gap-3 ${className}`}>
+      <GoldButton href={whatsappUrl}>{labelWhatsApp}</GoldButton>
+      <GoldButton href={aiqfomeUrl} className="bg-white text-black hover:bg-gray-100 border border-gray-200">{labelAiqfome}</GoldButton>
+    </div>
+  );
 }
 
 export default function Home() {
@@ -32,7 +43,7 @@ export default function Home() {
     <header className="site-header"><nav className="nav-shell" aria-label="Navegação principal">
       <a className="brand" href="#inicio" aria-label="Açaí Raiz — início"><Image className="brand-mark" src={brandLogo} alt="" width={44} height={44} priority /><span>AÇAÍ <b>RAIZ</b></span></a>
       <div className="nav-pill"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#atendimento">Para você e empresas</a><a href="#onde">Onde estamos</a></div>
-      <GoldButton>Pedir agora</GoldButton>
+      <OrderActions labelWhatsApp="Pedir agora" labelAiqfome="aiqfome" />
     </nav></header>
 
     <main id="inicio" className="page-shell">
@@ -41,7 +52,7 @@ export default function Home() {
           <ScrollReveal direction="left"><p className="eyebrow"><span /> AÇAÍ RAIZ · SABOR DE VERDADE</p></ScrollReveal>
           <ScrollReveal direction="left" delay={150}><h1 id="hero-title">O sabor que faz você <em>querer mais.</em></h1></ScrollReveal>
           <ScrollReveal direction="left" delay={300}><p className="hero-lead">Açaí de textura intensa, combinações generosas e aquele sabor que transforma qualquer pausa no melhor momento do dia.</p></ScrollReveal>
-          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><GoldButton>Pedir meu açaí</GoldButton><a className="text-link" href="#cardapio">Montar meu açaí <ArrowDownRight size={18} /></a></div></ScrollReveal>
+          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><OrderActions labelWhatsApp="Pedir meu açaí" labelAiqfome="Pedir via aiqfome" /><a className="text-link" href="#cardapio">Montar meu açaí <ArrowDownRight size={18} /></a></div></ScrollReveal>
           <ScrollReveal delay={600}><div className="trust-row"><div><strong>4,9</strong><span><Star size={13} fill="currentColor" /> avaliação média</span></div><div><strong>100%</strong><span>feito para dar vontade</span></div><div><strong>+20</strong><span>combinações possíveis</span></div></div></ScrollReveal>
         </div>
         <ScrollReveal direction="right" delay={300} duration={800} className="hero-visual">
@@ -73,7 +84,7 @@ export default function Home() {
           <ScrollReveal direction="right" delay={120} className="audience-wrap"><article className="audience-card business"><div className="audience-icon"><Building2 size={25} /></div><span className="audience-kicker">EMPRESAS · CNPJ</span><h3>Para o seu negócio</h3><p>Produção conforme a demanda para quem precisa de qualidade, constância e produto para revenda ou consumo.</p><div className="market-tags"><span>Supermercados</span><span>Mercearias</span><span>Restaurantes</span><span>Clubes</span><span>Outros negócios</span></div></article></ScrollReveal>
         </div>
         <ScrollReveal delay={180} duration={850} className="texture-wrap"><article className="texture-feature"><div className="texture-copy"><span className="texture-label"><Snowflake size={16} /> FORMULAÇÃO CONCENTRADA</span><h3>Do freezer à cremosidade em poucos minutos.</h3><p>Após cerca de 5 minutos fora do congelador, o Açaí Raiz começa a recuperar sua textura encorpada e cremosa — sem aquela sensação de produto excessivamente diluído.</p><div className="clean-recipe"><PackageCheck size={19} /><span><b>Receita mais natural</b>Sem adição de corantes e conservantes</span></div></div><div className="texture-visual"><Image src={premiumImage} alt="Açaí Raiz concentrado com textura cremosa" fill sizes="(max-width: 700px) 100vw, 48vw" /><div className="minute-badge"><strong>≈5</strong><span>minutos</span></div></div></article></ScrollReveal>
-        <ScrollReveal delay={260}><div className="audience-cta"><div><Factory size={23} /><span><b>Produção própria em Itabirito</b><small>Para sua casa ou para abastecer o seu negócio.</small></span></div><GoldButton>Fazer pedido ou orçamento</GoldButton></div></ScrollReveal>
+        <ScrollReveal delay={260}><div className="audience-cta"><div><Factory size={23} /><span><b>Produção própria em Itabirito</b><small>Para sua casa ou para abastecer o seu negócio.</small></span></div><OrderActions labelWhatsApp="Fazer pedido ou orçamento" labelAiqfome="Pedir via aiqfome" /></div></ScrollReveal>
       </section>
 
       <section id="experiencia" className="method section-pad section-grid"><div>
