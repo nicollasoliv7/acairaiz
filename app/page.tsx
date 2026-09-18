@@ -9,9 +9,9 @@ const cupImage = "/images/acai-raiz-copo.webp";
 const brandLogo = "/images/acai-raiz-logo.png";
 const locationUrl = "https://www.google.com/maps/search/?api=1&query=Rua+Sete+Lagoas%2C+283A%2C+Monte+Sinai%2C+Itabirito%2C+MG%2C+Brasil";
 const products = [
-  { name: "Açaí premium", detail: "Textura intensa · receita artesanal", size: "large", position: "center", image: premiumImage },
-  { name: "Pronto para saborear", detail: "Cremoso, gelado e irresistível", size: "tall", position: "center", image: cupImage },
-  { name: "Do seu jeito", detail: "Frutas, cremes e crocantes", size: "wide", position: "80% center", image: heroImage },
+  { name: "Açaí Premium", detail: "Concentração máxima e sabor raiz para os verdadeiros apaixonados", size: "large", position: "center", image: premiumImage },
+  { name: "Pronto para Saborear", detail: "A dose perfeita de energia: cremoso, intenso e irresistível", size: "tall", position: "center", image: cupImage },
+  { name: "Do seu jeito", detail: "Sua criatividade, nossa base premium. Monte a combinação ideal", size: "wide", position: "80% center", image: heroImage },
 ];
 const testimonials = [
   { quote: "Textura perfeita, o sabor da fruta é apuradíssimo. Corante zero. Não é doce, é no ponto.", context: "Feedback real · WhatsApp" },
@@ -37,11 +37,11 @@ export default function Home() {
     <main id="inicio" className="page-shell">
       <section className="hero section-grid" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <ScrollReveal direction="left"><p className="eyebrow"><span /> AÇAÍ RAIZ · SABOR DE VERDADE</p></ScrollReveal>
-          <ScrollReveal direction="left" delay={150}><h1 id="hero-title">O sabor que faz você <em>querer mais.</em></h1></ScrollReveal>
-          <ScrollReveal direction="left" delay={300}><p className="hero-lead">Açaí de textura intensa, combinações generosas e aquele sabor que transforma qualquer pausa no melhor momento do dia.</p></ScrollReveal>
-          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><GoldButton>Pedir meu açaí</GoldButton><a className="text-link" href="#acai">Conhecer sabores <ArrowDownRight size={18} /></a></div></ScrollReveal>
-          <ScrollReveal delay={600}><div className="trust-row"><div><strong>4,9</strong><span><Star size={13} fill="currentColor" /> avaliação média</span></div><div><strong>100%</strong><span>feito para dar vontade</span></div><div><strong>+20</strong><span>combinações possíveis</span></div></div></ScrollReveal>
+          <ScrollReveal direction="left"><p className="eyebrow"><span /> AÇAÍ RAIZ · PRODUÇÃO PRÓPRIA</p></ScrollReveal>
+          <ScrollReveal direction="left" delay={150}><h1 id="hero-title">O açaí concentrado de quem produz, com a <em>cremosidade que você sente.</em></h1></ScrollReveal>
+          <ScrollReveal direction="left" delay={300}><p className="hero-lead">Direto da nossa fábrica em Itabirito para você ou seu negócio. Sabor intenso, receita pura e a textura perfeita que não aceita imitações.</p></ScrollReveal>
+          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><GoldButton>Pedir meu açaí agora</GoldButton><a className="text-link" href="#acai">Conhecer a experiência <ArrowDownRight size={18} /></a></div></ScrollReveal>
+          <ScrollReveal delay={600}><div className="trust-row"><div><strong>4,9</strong><span>avaliação média</span></div><div><strong>100%</strong><span>produção própria</span></div><div><strong>Zero</strong><span>corantes e conservantes</span></div></div></ScrollReveal>
         </div>
         <ScrollReveal direction="right" delay={300} duration={800} className="hero-visual">
           <div className="hero-glow" /><Image src={heroImage} alt="Açaí Raiz cremoso servido em uma tigela escura" fill priority sizes="(max-width: 900px) 100vw, 48vw" />
@@ -51,10 +51,10 @@ export default function Home() {
       </section>
 
       <section id="acai" className="products section-pad">
-        <ScrollReveal><p className="eyebrow"><span /> ESCOLHA SEU MOMENTO</p></ScrollReveal>
-        <ScrollReveal delay={120}><div className="section-heading"><h2>Feito para ser<br /><em>inesquecível.</em></h2><p>Do clássico bem cremoso às combinações mais completas, cada escolha entrega textura, frescor e personalidade.</p></div></ScrollReveal>
+        <ScrollReveal><p className="eyebrow"><span /> EXPERIÊNCIA ÚNICA</p></ScrollReveal>
+        <ScrollReveal delay={120}><div className="section-heading"><h2>Feito para ser<br /><em>memorável.</em></h2><p>Do açaí puro e concentrado às combinações mais completas, cada escolha entrega a textura e a intensidade que você merece.</p></div></ScrollReveal>
         <div className="bento-grid">{products.map((product, index) => <ScrollReveal key={product.name} delay={index * 150} className={`product-wrap ${product.size}`}><article className="product-card"><Image src={product.image} alt={product.name} fill sizes="(max-width: 700px) 100vw, 50vw" style={{ objectPosition: product.position }} /><div className="product-shade" /><div className="product-copy"><span>0{index + 1}</span><h3>{product.name}</h3><p>{product.detail}</p></div></article></ScrollReveal>)}
-          <ScrollReveal delay={450} className="accent-wrap"><article className="accent-card"><span className="mono">MONTE O SEU</span><h3>Uma combinação com a sua cara.</h3><a href="#onde">Começar pedido <ArrowUpRight size={20} /></a></article></ScrollReveal>
+          <ScrollReveal delay={450} className="accent-wrap"><article className="accent-card"><span className="mono">MONTE O SEU</span><h3>Sua combinação, nossa base premium.</h3><a href="#onde">Começar pedido <ArrowUpRight size={20} /></a></article></ScrollReveal>
         </div>
       </section>
 
