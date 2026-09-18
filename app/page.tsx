@@ -9,9 +9,9 @@ const cupImage = "/images/acai-raiz-copo.webp";
 const brandLogo = "/images/acai-raiz-logo.png";
 const locationUrl = "https://www.google.com/maps/search/?api=1&query=Rua+Sete+Lagoas%2C+283A%2C+Monte+Sinai%2C+Itabirito%2C+MG%2C+Brasil";
 const products = [
-  { name: "Açaí Premium", detail: "Concentração máxima e sabor raiz para os verdadeiros apaixonados", size: "large", position: "center", image: premiumImage },
-  { name: "Pronto para Saborear", detail: "A dose perfeita de energia: cremoso, intenso e irresistível", size: "tall", position: "center", image: cupImage },
-  { name: "Do seu jeito", detail: "Sua criatividade, nossa base premium. Monte a combinação ideal", size: "wide", position: "80% center", image: heroImage },
+  { name: "Açaí Premium", detail: "A base pura e concentrada. O padrão ouro de qualidade para quem busca o sabor real do açaí", size: "large", position: "center", image: premiumImage },
+  { name: "Pronto para Saborear", detail: "Cremosidade imediata. A experiência completa do Açaí Raiz pronta para o consumo", size: "tall", position: "center", image: cupImage },
+  { name: "Do seu jeito", detail: "Sua combinação favorita sobre a nossa base premium. Energia e sabor na medida certa", size: "wide", position: "80% center", image: heroImage },
 ];
 const testimonials = [
   { quote: "Textura perfeita, o sabor da fruta é apuradíssimo. Corante zero. Não é doce, é no ponto.", context: "Feedback real · WhatsApp" },
@@ -37,10 +37,10 @@ export default function Home() {
     <main id="inicio" className="page-shell">
       <section className="hero section-grid" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <ScrollReveal direction="left"><p className="eyebrow"><span /> AÇAÍ RAIZ · PRODUÇÃO PRÓPRIA</p></ScrollReveal>
-          <ScrollReveal direction="left" delay={150}><h1 id="hero-title">O açaí concentrado de quem produz, com a <em>cremosidade que você sente.</em></h1></ScrollReveal>
-          <ScrollReveal direction="left" delay={300}><p className="hero-lead">Direto da nossa fábrica em Itabirito para você ou seu negócio. Sabor intenso, receita pura e a textura perfeita que não aceita imitações.</p></ScrollReveal>
-          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><GoldButton>Pedir meu açaí agora</GoldButton><a className="text-link" href="#acai">Conhecer a experiência <ArrowDownRight size={18} /></a></div></ScrollReveal>
+          <ScrollReveal direction="left"><p className="eyebrow"><span /> AÇAÍ RAIZ · FÁBRICA PRÓPRIA</p></ScrollReveal>
+          <ScrollReveal direction="left" delay={150}><h1 id="hero-title">Sabor concentrado de quem produz, <em>direto para você ou seu negócio.</em></h1></ScrollReveal>
+          <ScrollReveal direction="left" delay={300}><p className="hero-lead">Fábrica própria em Itabirito com receita pura e textura incomparável. Perfeito para saborear em casa ou para lucrar revendendo em seu estabelecimento.</p></ScrollReveal>
+          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><GoldButton>Pedir meu Açaí</GoldButton><a className="text-link" href="#atendimento">Quero revender no meu negócio <ArrowDownRight size={18} /></a></div></ScrollReveal>
           <ScrollReveal delay={600}><div className="trust-row"><div><strong>4,9</strong><span>avaliação média</span></div><div><strong>100%</strong><span>produção própria</span></div><div><strong>Zero</strong><span>corantes e conservantes</span></div></div></ScrollReveal>
         </div>
         <ScrollReveal direction="right" delay={300} duration={800} className="hero-visual">
@@ -62,10 +62,10 @@ export default function Home() {
         <ScrollReveal><p className="eyebrow"><span /> FÁBRICA PRÓPRIA · ITABIRITO/MG</p></ScrollReveal>
         <ScrollReveal delay={120}><div className="section-heading"><h2>Da nossa fábrica.<br /><em>Para você e seu negócio.</em></h2><p>Produzimos conforme a demanda para atender do pedido do dia a dia ao abastecimento de estabelecimentos.</p></div></ScrollReveal>
         <div className="audience-grid">
-          <ScrollReveal direction="left" className="audience-wrap"><article className="audience-card individual"><div className="audience-icon"><UserRound size={25} /></div><span className="audience-kicker">PESSOA FÍSICA</span><h3>Para você</h3><p>O sabor da fábrica direto para a sua casa, com praticidade para escolher como receber.</p><ul><li><Truck size={18} /> Delivery em Itabirito</li><li><Factory size={18} /> Retirada direto na fábrica</li></ul></article></ScrollReveal>
-          <ScrollReveal direction="right" delay={120} className="audience-wrap"><article className="audience-card business"><div className="audience-icon"><Building2 size={25} /></div><span className="audience-kicker">EMPRESAS · CNPJ</span><h3>Para o seu negócio</h3><p>Produção conforme a demanda para quem precisa de qualidade, constância e produto para revenda ou consumo.</p><div className="market-tags"><span>Supermercados</span><span>Mercearias</span><span>Restaurantes</span><span>Clubes</span><span>Outros negócios</span></div></article></ScrollReveal>
+          <ScrollReveal direction="left" className="audience-wrap"><article className="audience-card individual"><div className="audience-icon"><UserRound size={25} /></div><span className="audience-kicker">PESSOA FÍSICA</span><h3>Para você saborear</h3><p>O sabor da fábrica direto para a sua casa. Pureza e cremosidade incomparáveis para o seu dia a dia.</p><ul><li><Truck size={18} /> Delivery em Itabirito</li><li><Factory size={18} /> Retirada direto na fábrica</li></ul></article></ScrollReveal>
+          <ScrollReveal direction="right" delay={120} className="audience-wrap"><article className="audience-card business"><div className="audience-icon"><Building2 size={25} /></div><span className="audience-kicker">EMPRESAS · CNPJ</span><h3>Para você lucrar (Revenda)</h3><p>Uma oportunidade lucrativa para o seu negócio. Fornecimento constante de um produto premium que fideliza clientes.</p><div className="market-tags"><span>Supermercados</span><span>Mercearias</span><span>Restaurantes</span><span>Clubes</span><span>Outros negócios</span></div></article></ScrollReveal>
         </div>
-        <ScrollReveal delay={180} duration={850} className="texture-wrap"><article className="texture-feature"><div className="texture-copy"><span className="texture-label"><Snowflake size={16} /> FORMULAÇÃO CONCENTRADA</span><h3>Do freezer à cremosidade em poucos minutos.</h3><p>Após cerca de 5 minutos fora do congelador, o Açaí Raiz começa a recuperar sua textura encorpada e cremosa — sem aquela sensação de produto excessivamente diluído.</p><div className="clean-recipe"><PackageCheck size={19} /><span><b>Receita mais natural</b>Sem adição de corantes e conservantes</span></div></div><div className="texture-visual"><Image src={premiumImage} alt="Açaí Raiz concentrado com textura cremosa" fill sizes="(max-width: 700px) 100vw, 48vw" /><div className="minute-badge"><strong>≈5</strong><span>minutos</span></div></div></article></ScrollReveal>
+        <ScrollReveal delay={180} duration={850} className="texture-wrap"><article className="texture-feature"><div className="texture-copy"><span className="texture-label"><Snowflake size={16} /> A PROVA REAL DA CONCENTRAÇÃO</span><h3>Do freezer à cremosidade em poucos minutos.</h3><p>Diferente de produtos diluídos, o Açaí Raiz recupera sua textura encorpada e cremosa rapidamente após sair do congelador — a prova de que você está consumindo a fruta em sua máxima pureza.</p><div className="clean-recipe"><PackageCheck size={19} /><span><b>Receita mais natural</b>Sem adição de corantes e conservantes</span></div></div><div className="texture-visual"><Image src={premiumImage} alt="Açaí Raiz concentrado com textura cremosa" fill sizes="(max-width: 700px) 100vw, 48vw" /><div className="minute-badge"><strong>≈5</strong><span>minutos</span></div></div></article></ScrollReveal>
         <ScrollReveal delay={260}><div className="audience-cta"><div><Factory size={23} /><span><b>Produção própria em Itabirito</b><small>Para sua casa ou para abastecer o seu negócio.</small></span></div><GoldButton>Fazer pedido ou orçamento</GoldButton></div></ScrollReveal>
       </section>
 
