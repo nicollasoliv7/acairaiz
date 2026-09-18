@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowDownRight, ArrowUpRight, Building2, Check, Factory, MapPin, PackageCheck, Snowflake, Sparkles, Star, Truck, UserRound } from "lucide-react";
 import { ProgressiveBlur } from "@/components/ProgressiveBlur";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { MenuBuilder } from "@/components/MenuBuilder";
 
 const heroImage = "/images/acai-raiz-hero.webp";
 const premiumImage = "/images/acai-raiz-premium.webp";
@@ -30,7 +31,7 @@ export default function Home() {
   return <>
     <header className="site-header"><nav className="nav-shell" aria-label="Navegação principal">
       <a className="brand" href="#inicio" aria-label="Açaí Raiz — início"><Image className="brand-mark" src={brandLogo} alt="" width={44} height={44} priority /><span>AÇAÍ <b>RAIZ</b></span></a>
-      <div className="nav-pill"><a href="#inicio">Início</a><a href="#acai">Nosso Açaí</a><a href="#experiencia">Experiência</a><a href="#onde">Onde estamos</a></div>
+      <div className="nav-pill"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#atendimento">Para você e empresas</a><a href="#onde">Onde estamos</a></div>
       <GoldButton>Pedir agora</GoldButton>
     </nav></header>
 
@@ -40,7 +41,7 @@ export default function Home() {
           <ScrollReveal direction="left"><p className="eyebrow"><span /> AÇAÍ RAIZ · SABOR DE VERDADE</p></ScrollReveal>
           <ScrollReveal direction="left" delay={150}><h1 id="hero-title">O sabor que faz você <em>querer mais.</em></h1></ScrollReveal>
           <ScrollReveal direction="left" delay={300}><p className="hero-lead">Açaí de textura intensa, combinações generosas e aquele sabor que transforma qualquer pausa no melhor momento do dia.</p></ScrollReveal>
-          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><GoldButton>Pedir meu açaí</GoldButton><a className="text-link" href="#acai">Conhecer sabores <ArrowDownRight size={18} /></a></div></ScrollReveal>
+          <ScrollReveal direction="left" delay={450}><div className="hero-actions"><GoldButton>Pedir meu açaí</GoldButton><a className="text-link" href="#cardapio">Montar meu açaí <ArrowDownRight size={18} /></a></div></ScrollReveal>
           <ScrollReveal delay={600}><div className="trust-row"><div><strong>4,9</strong><span><Star size={13} fill="currentColor" /> avaliação média</span></div><div><strong>100%</strong><span>feito para dar vontade</span></div><div><strong>+20</strong><span>combinações possíveis</span></div></div></ScrollReveal>
         </div>
         <ScrollReveal direction="right" delay={300} duration={800} className="hero-visual">
@@ -48,6 +49,12 @@ export default function Home() {
           <div className="floating-card card-one"><Sparkles size={18} /><span><b>CREMOSIDADE</b> que dá para ver</span></div>
           <div className="floating-card card-two"><Check size={18} /><span><b>SABOR INTENSO</b> do começo ao fim</span></div>
         </ScrollReveal>
+      </section>
+
+      <section id="cardapio" className="menu-section section-pad">
+        <ScrollReveal><p className="eyebrow"><span /> MONTE DO SEU JEITO</p></ScrollReveal>
+        <ScrollReveal delay={100}><div className="section-heading"><h2>Seu açaí.<br /><em>Suas escolhas.</em></h2><p>Escolha o tamanho, adicione seus favoritos e veja o valor do pedido na hora.</p></div></ScrollReveal>
+        <ScrollReveal delay={180} duration={850}><MenuBuilder /></ScrollReveal>
       </section>
 
       <section id="acai" className="products section-pad">
